@@ -5,7 +5,7 @@ import {toast} from 'react-toastify'
 import axios from 'axios'
 import {Award , BookOpen, Code , Coffee, Cpu,Database,Globe,Layout,Sparkles,Star,Target,Terminal,Trophy,Zap ,X,ChevronDown,ChevronRight,Menu,CheckCircle,XCircle} from 'lucide-react'
 
-const API_BASE='http://localhost:4000';
+const API_BASE='https://quizquest-jdql.onrender.com';
 
 const Sidebar = () => {
     const [selectedTech, setSelectedTech] = useState(null);

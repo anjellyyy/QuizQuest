@@ -11,24 +11,26 @@ const port = process.env.PORT || 4000;
 
 // MIDDLEWARE
 app.use(cors({
-    origin: "*"
+  origin: [
+    "http://localhost:5173",
+    "https://quizquest-1-bhru.onrender.com",
+    "https://quizquest-jdql.onrender.com"
+  ],
+  credentials: true
 }));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// DB
 connectDB();
 
-// ROUTES
 app.use('/api/auth', userRouter);
 app.use('/api/results', resultRouter);
 
-
-
-app.get('/', (req,res) => {
-    res.send('API WORKING');
+app.get('/', (req, res) => {
+  res.send('API WORKING');
 });
 
 app.listen(port, () => {
-    console.log(`Server Started on http://localhost:${port}`)
-})
+  console.log(`Server running on port ${port}`);
+});

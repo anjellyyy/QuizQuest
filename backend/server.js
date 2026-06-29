@@ -6,7 +6,11 @@ import userRouter from './routes/userRouts.js';
 import resultRouter from './routes/resultRoutes.js';
 
 const app=express();
-const port=4000;
+const port = process.env.PORT || 4000;
+
+app.listen(port, () => {
+    console.log(`Server started on port ${port}`);
+});
 
 // MIDDLEWARE
 app.use(cors());
